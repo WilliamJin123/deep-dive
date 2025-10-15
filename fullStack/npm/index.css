@@ -1,0 +1,97 @@
+/* General Body and Container Styling */
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif; /* Hand-drawn feel */
+    background-color: #f8f8f8; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrollbar if box-shadow goes slightly out */
+}
+
+#time-display-container {
+    position: relative; /* For the borders/shadows */
+    width: 90%;
+    max-width: 600px; /* Adjust as needed */
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border: 2px solid #333; /* The main outer border */
+    border-radius: 8px; /* Slightly rounded corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px; /* Space between elements */
+
+    /* Hand-drawn box shadow effect */
+    box-shadow:
+        4px 4px 0 0 #333,   /* Right-bottom shadow */
+        -2px -2px 0 0 #333,  /* Top-left subtle shadow */
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1); /* Subtle inner highlight */
+}
+
+/* Timezone Name */
+#user-timezone {
+    font-size: 1.1em;
+    color: #888; /* Greyed out as per design */
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-transform: capitalize; /* Example for display */
+    text-align: right;
+}
+
+/* Current Time */
+#current-time {
+    font-family: 'Roboto Mono', monospace, 'Courier New', monospace; /* Monospace for digital clock feel */
+    font-size: 5em; /* Very large and prominent */
+    font-weight: bold;
+    color: #333;
+    letter-spacing: -2px; /* Tighten up the numbers slightly */
+    margin: 0; /* Remove default margins */
+}
+
+/* Current Date */
+#current-date {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+    font-weight: normal;
+    text-align: right;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    #time-display-container {
+        padding: 30px 20px;
+        gap: 8px;
+    }
+    #current-time {
+        font-size: 3.5em; /* Smaller on smaller screens */
+    }
+    #user-timezone {
+        font-size: 1em;
+    }
+    #current-date {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #time-display-container {
+        padding: 20px 15px;
+        gap: 5px;
+    }
+    #current-time {
+        font-size: 2.8em; /* Even smaller */
+    }
+    #user-timezone {
+        font-size: 0.9em;
+    }
+    #current-date {
+        font-size: 1em;
+    }
+}

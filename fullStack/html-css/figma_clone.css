@@ -1,0 +1,65 @@
+@property --bg-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #232730;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 3vh 5vw;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1vw;
+    
+}
+
+header nav ul a{
+    color: white;
+    text-decoration: none;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem;
+}
+.title h1{
+    font-style: italic;
+    color: #d77177;
+    font-size: 6rem;
+    text-align: center;
+    margin: 1rem;
+}
+
+menu {
+    display: flex;
+    position: relative;
+    gap: 8%;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    font-style: italic;
+    color: #717471;
+    border-top: rgba(100, 150, 200, 0.2) solid 1px;
+}
+
+menu::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20%; 
+    height: 100%;
+    background: linear-gradient(to right, transparent, var(--bg-color));
+    pointer-events: none;
+}

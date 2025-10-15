@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+.search-section {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.search-section input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.search-section button {
+    padding: 10px 16px;
+    border: none;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-section button:hover {
+    background-color: #4338ca;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.task-list {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.task-list ul {
+    list-style: none;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-list li:last-child {
+    border-bottom: none;
+}
+
+.task-text {
+    flex: 1;
+}
+
+button.edit-task, button.delete-task {
+    margin-left: 8px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button.edit-task {
+    background-color: #facc15;
+}
+
+button.delete-task {
+    background-color: #ef4444;
+    color: white;
+}
+
+button.edit-task:hover {
+    background-color: #eab308;
+}
+
+button.delete-task:hover {
+    background-color: #dc2626;
+}
+
+.add-task, .search-task {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.add-task input, .search-task input, .edit-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.add-task button, .search-task button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-task button:hover, .search-task button:hover {
+    background-color: #1d4ed8;
+}

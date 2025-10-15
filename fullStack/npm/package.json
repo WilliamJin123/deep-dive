@@ -1,0 +1,20 @@
+{
+  "name": "timedisplay",
+  "version": "1.0.0",
+  "description": "display time to user",
+  "license": "MIT",
+  "author": "William Jin",
+  "type": "module",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.18",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

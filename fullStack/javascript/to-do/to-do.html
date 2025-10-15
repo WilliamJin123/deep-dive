@@ -1,0 +1,33 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="to-do.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <section class="search-section">
+            <input class="search-in" type="text" placeholder="Search">
+            <button class="search-btn">Search</button>
+        </section class="search-section">
+        <h1>To Do List</h1>
+        <section class="task-list">
+            <ul id="tasks">
+                <!-- Tasks will be dynamically added here -->
+                <!-- Example static item for structure: -->
+                <li class="task">
+                    <span class="task-text">Finish this List</span>
+                    <button class="edit-task">Edit</button>
+                    <button class="delete-task">Delete</button>
+                </li>
+            </ul>
+        </section>
+        <section class="add-task">
+            <input type="text" id="new-task-input" placeholder="Add a new task">
+            <button id="add-task-button">Add</button>
+        </section>
+        
+        <script src="to-do.js"></script>
+    </body>
+    </html>

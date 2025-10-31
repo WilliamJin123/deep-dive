@@ -1,0 +1,3 @@
+Vite init react:  
+npm init @vitejs/app
+

@@ -15,7 +15,7 @@ Note to william: make an agentic workflow that goes through these repositories a
 
 ## Build Ideas
 
-- [demos (MCP projects)](https://github.com/bitswired/demos)
+- [demos](https://github.com/bitswired/demos) - Interesting API stuff, lots of MCP / agentic stuff to look into
 - [projectlearn-project-based-learning](https://github.com/Xtremilicious/projectlearn-project-based-learning) – various projects, interesting full-stack stuff
 - [build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) – classic “build your own” collection
 - [app-ideas](https://github.com/florinpop17/app-ideas) – more of a fun, app-focused collection

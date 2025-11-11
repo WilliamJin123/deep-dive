@@ -1,0 +1,9 @@
+[{
+    "name": "theme_info",
+    "theme_name": "test_theme",
+    "theme_author": "William Jin",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://shopify.dev/docs",
+    "theme_support_url": "https://shopify.dev/docs",
+    "theme_support_email": "jinwilliam.jin@gmail.com"
+}]

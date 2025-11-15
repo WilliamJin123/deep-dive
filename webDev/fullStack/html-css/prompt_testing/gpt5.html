@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GoldTech — Modern SaaS Platform</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070707;
+      --card:#0f0f0f;
+      --gold:#D4AF37;
+      --gold-2:#e6c44b;
+      --muted:#a8a8a8;
+      --glass:rgba(255,255,255,0.03);
+      --radius:12px;
+      --maxw:1200px;
+      --nav-height:76px;
+    }
+
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#fff;background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-top:var(--nav-height)}
+
+    .wrap{width:94%;max-width:var(--maxw);margin:0 auto}
+
+    /* Header / Nav */
+    header{position:fixed;left:0;right:0;top:0;z-index:60;display:flex;justify-content:center;height:var(--nav-height);align-items:center}
+    .nav{width:100%;max-width:var(--maxw);background:linear-gradient(180deg,transparent,rgba(255,255,255,0.02));backdrop-filter:blur(6px);border-radius:14px;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 30px rgba(0,0,0,0.6)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{height:48px;width:48px;border-radius:10px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-2) 50%);box-shadow:0 6px 30px rgba(212,175,55,0.12);display:grid;place-items:center;font-weight:800;color:#0b0b0b}
+    .brand h1{font-size:1.05rem;letter-spacing:0.6px}
+    nav.links{display:flex;align-items:center;gap:18px}
+    nav.links a{color:var(--muted);text-decoration:none;font-weight:600}
+
+    .cta{display:flex;gap:10px;align-items:center}
+    .btn{padding:10px 16px;border-radius:10px;border:1px solid rgba(212,175,55,0.08);font-weight:700;background:transparent;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,transparent,rgba(212,175,55,0.06));color:var(--gold);border:1px solid rgba(212,175,55,0.16);position:relative;overflow:hidden}
+    .btn.primary::after{content:'';position:absolute;left:-40%;top:-40%;width:180%;height:180%;background:linear-gradient(60deg,transparent,rgba(255,255,255,0.07),transparent);transform:rotate(25deg);transition:transform .9s cubic-bezier(.2,.9,.2,1)}
+    .btn.primary:hover::after{transform:translateX(-6%) rotate(25deg)}
+
+    /* Hero */
+    .hero{min-height:calc(100vh - var(--nav-height));display:grid;align-items:center;padding:56px 0;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(800px 400px at 10% 30%,rgba(212,175,55,0.045),transparent 12%),radial-gradient(600px 300px at 90% 60%,rgba(212,175,55,0.03),transparent 12%),linear-gradient(180deg,#050505,#0a0a0a);z-index:0}
+    .hero-grad{position:absolute;inset:-20% -10% -20% -10%;background:linear-gradient(120deg,#0b0b0b,#0b0b0b 30%,rgba(212,175,55,0.02) 60%);background-size:300% 300%;animation:gradShift 18s linear infinite;mix-blend-mode:overlay;opacity:.9}
+    @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;z-index:2}
+    .hero h2{font-size:clamp(1.8rem,4.5vw,3.2rem);color:var(--gold);line-height:1}
+    .hero p{color:var(--muted);margin-top:12px;font-size:1.05rem}
+
+    .cta-row{margin-top:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .pill{display:inline-flex;gap:10px;align-items:center;padding:8px 12px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(212,175,55,0.02));border-radius:999px;border:1px solid rgba(255,255,255,0.02);font-weight:600}
+
+    /* Mockup */
+    .mockup{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:16px;padding:18px;box-shadow:0 18px 50px rgba(0,0,0,0.75);border:1px solid rgba(255,255,255,0.03)}
+    .mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .window-dots{display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.06)}
+    .mock-screen{height:260px;background:linear-gradient(180deg,#0b0b0b,#121212);border-radius:10px;overflow:hidden;position:relative}
+    .wave{position:absolute;inset:auto 0 0 0;height:64px;background:linear-gradient(90deg,rgba(212,175,55,0.06),transparent);transform:skewY(-6deg);bottom:0;animation:wave 6s ease-in-out infinite}
+    @keyframes wave{0%{transform:translateX(-10%) skewY(-6deg)}50%{transform:translateX(10%) skewY(-6deg)}100%{transform:translateX(-10%) skewY(-6deg)}}
+
+    /* Sections */
+    section{padding:60px 0}
+    .section-title{font-size:clamp(1.5rem,3.5vw,2rem);color:var(--gold);margin-bottom:28px}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);min-height:160px;display:flex;flex-direction:column;gap:10px;transition:transform .6s cubic-bezier(.2,.9,.2,1),box-shadow .4s}
+    .card:hover{transform:translateY(-10px);box-shadow:0 24px 80px rgba(212,175,55,0.06)}
+    .icon{width:54px;height:54px;border-radius:10px;background:linear-gradient(180deg,rgba(212,175,55,0.12),rgba(212,175,55,0.04));display:grid;place-items:center;font-weight:800;color:var(--gold)}
+    .card h3{color:var(--gold);font-size:1.05rem}
+    .card p{color:var(--muted);flex:1}
+
+    /* Pricing */
+    .pricing-wrap{display:flex;gap:18px;align-items:center;justify-content:center}
+    .toggle{background:var(--card);padding:6px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);display:inline-flex}
+    .toggle button{padding:8px 14px;border-radius:999px;border:none;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}
+    .toggle button.active{background:linear-gradient(90deg,rgba(212,175,55,0.09),rgba(212,175,55,0.03));color:var(--gold)}
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+    .plan{padding:22px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);text-align:center}
+    .plan.pop{border:1px solid rgba(212,175,55,0.22);box-shadow:0 18px 60px rgba(212,175,55,0.04)}
+    .plan h4{color:var(--gold)}
+    .price{font-size:2rem;margin:12px 0;color:var(--gold)}
+    .plan ul{list-style:none;padding:0;margin:0;color:var(--muted)}
+    .plan li{padding:8px 0}
+
+    /* Testimonials */
+    .testimonials{max-width:900px;margin:0 auto}
+    .slider{position:relative;border-radius:12px;padding:30px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.03)}
+    .slide{display:none;text-align:center;color:var(--muted);font-style:italic}
+    .slide.active{display:block;animation:fadeIn .6s ease both}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+    footer{padding:40px 0;text-align:center;color:var(--muted)}
+
+    /* Floating card */
+    .float-card{position:absolute;right:-30px;top:30%;width:320px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(20,20,20,0.65),rgba(10,10,10,0.45));backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.02);box-shadow:0 22px 80px rgba(0,0,0,0.6);transform:translateY(0);animation:floatY 6s ease-in-out infinite}
+    @keyframes floatY{0%{transform:translateY(-6px)}50%{transform:translateY(6px)}100%{transform:translateY(-6px)}}
+
+    /* Reveal helper */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* Responsive */
+    @media (max-width:1000px){.hero-grid{grid-template-columns:1fr 360px}.features{grid-template-columns:repeat(2,1fr)}.pricing{grid-template-columns:repeat(2,1fr)}.float-card{display:none}}
+    @media (max-width:720px){.nav{padding:10px}.hero-grid{grid-template-columns:1fr}.mockup{display:none}.features{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.brand h1{font-size:.95rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">G</div>
+          <div>
+            <h1>GoldTech</h1>
+            <div style="font-size:12px;color:var(--muted)">Secure analytics • Instant insights</div>
+          </div>
+        </div>
+        <nav class="links">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="cta">
+          <button class="btn">Log in</button>
+          <button class="btn primary">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grad"></div>
+
+      <div class="wrap hero-grid">
+        <div>
+          <h2>Modern analytics for teams that move fast</h2>
+          <p>Streamlined dashboards, role-based controls, and real-time alerts. Built to scale from prototype to production.</p>
+
+          <div class="cta-row">
+            <div class="pill">14-day free trial</div>
+            <div style="display:flex;gap:12px">
+              <button class="btn primary">Start free trial</button>
+              <button class="btn">Book demo</button>
+            </div>
+          </div>
+
+          <div style="margin-top:28px;display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+            <div class="card" style="width:220px;min-height:88px">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div class="icon">⟲</div>
+                <div>
+                  <div style="color:var(--gold);font-weight:800">99.99%</div>
+                  <div style="color:var(--muted);font-size:13px">Uptime</div>
+                </div>
+              </div>
+            </div>
+            <div class="card" style="width:220px;min-height:88px">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div class="icon">⚡</div>
+                <div>
+                  <div style="color:var(--gold);font-weight:800"><span id="latency">12</span>ms</div>
+                  <div style="color:var(--muted);font-size:13px">Avg response</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup">
+          <div class="mock-top">
+            <div style="display:flex;gap:10px;align-items:center">
+              <div class="window-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+              <div style="color:var(--muted)">Live Preview</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <div style="font-weight:700;color:var(--gold)">Workspace</div>
+              <div style="font-size:12px;color:var(--muted)">v2.1.8</div>
+            </div>
+          </div>
+
+          <div class="mock-screen">
+            <canvas id="chart" style="display:block;width:100%;height:100%"></canvas>
+            <div class="wave"></div>
+          </div>
+        </div>
+
+        <div class="float-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+            <div class="icon">🔒</div>
+            <div style="font-weight:800;color:var(--gold)">Enterprise-grade security</div>
+          </div>
+          <div style="color:var(--muted);font-size:14px">SOC2 controls, SSO, and policy engines that enforce safe deployments across teams.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="wrap">
+      <h3 class="section-title">Powerful features</h3>
+      <div class="features reveal">
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Real-time dashboards</h3>
+          <p>Live streams, custom widgets, and collaboration tools that keep your team aligned.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔁</div>
+          <h3>Automations</h3>
+          <p>Trigger workflows from conditions, route incidents, and auto-resolve issues based on rules.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h3>Robust security</h3>
+          <p>Role-based access, audit logs, and encryption in transit and at rest.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" style="background:linear-gradient(180deg,#060606,transparent)">
+      <div class="wrap">
+        <h3 class="section-title">Pricing</h3>
+        <div class="pricing-wrap">
+          <div class="toggle">
+            <button class="active" id="monthly">Monthly</button>
+            <button id="yearly">Yearly</button>
+          </div>
+        </div>
+
+        <div class="pricing reveal">
+          <div class="plan">
+            <h4>Starter</h4>
+            <div class="price" data-month="19" data-year="190">$19<span style="font-size:13px;color:var(--muted)">/mo</span></div>
+            <ul>
+              <li>Up to 5 users</li>
+              <li>Basic alerts</li>
+              <li>Email support</li>
+            </ul>
+            <div style="margin-top:14px"><button class="btn">Choose</button></div>
+          </div>
+
+          <div class="plan pop">
+            <h4>Pro</h4>
+            <div class="price" data-month="59" data-year="590">$59<span style="font-size:13px;color:var(--muted)">/mo</span></div>
+            <ul>
+              <li>Unlimited dashboards</li>
+              <li>Automations</li>
+              <li>Priority support</li>
+            </ul>
+            <div style="margin-top:14px"><button class="btn primary">Choose</button></div>
+          </div>
+
+          <div class="plan">
+            <h4>Enterprise</h4>
+            <div class="price" data-month="199" data-year="1990">$199<span style="font-size:13px;color:var(--muted)">/mo</span></div>
+            <ul>
+              <li>SSO & SAML</li>
+              <li>Dedicated account manager</li>
+              <li>Custom SLAs</li>
+            </ul>
+            <div style="margin-top:14px"><button class="btn">Contact</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="wrap">
+        <h3 class="section-title">What customers say</h3>
+        <div class="testimonials">
+          <div class="slider reveal">
+            <div class="slide active">"GoldTech transformed how our ops team works. Alerts are crisp and the dashboards are fast."<h5>— A. Morgan, CTO</h5></div>
+            <div class="slide">"We saved hundreds of engineering hours thanks to automation templates."<h5>— Lina P., Head of Ops</h5></div>
+            <div class="slide">"Enterprise-ready security and best-in-class support."<h5>— Marco R., IT Director</h5></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h3 class="section-title">Get in touch</h3>
+        <div style="max-width:640px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+          <form style="display:grid;gap:12px">
+            <input placeholder="Your name" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:#0b0b0b;color:#fff">
+            <input placeholder="Work email" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:#0b0b0b;color:#fff">
+            <textarea placeholder="Tell us about your needs" rows="4" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:#0b0b0b;color:#fff"></textarea>
+            <div style="display:flex;gap:10px;justify-content:flex-end">
+              <button class="btn" type="button">Cancel</button>
+              <button class="btn primary" type="submit">Send message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+        <div style="display:flex;gap:12px;align-items:center"><div class="logo">G</div><div style="color:var(--muted)">© 2025 GoldTech</div></div>
+        <div style="color:var(--muted)">Privacy • Terms • Status</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---------- Utilities & DOM Ready
+    function qs(sel){return document.querySelector(sel)}
+    function qsa(sel){return Array.from(document.querySelectorAll(sel))}
+
+    // ---------- Small live demo values (latency)
+    const latencyEl = qs('#latency');
+    function simulateLatency(){ if(latencyEl) latencyEl.textContent = Math.floor(7 + Math.random()*30) }
+    setInterval(simulateLatency, 1600);
+    simulateLatency();
+
+    // ---------- Canvas chart (responsive, high-DPI)
+    (function setupChart(){
+      const canvas = qs('#chart');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      function resize(){
+        const rect = canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.round(rect.width * dpr);
+        canvas.height = Math.round(rect.height * dpr);
+        ctx.setTransform(dpr,0,0,dpr,0,0); // scale drawing operations
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      function draw(){
+        const W = canvas.clientWidth, H = canvas.clientHeight;
+        ctx.clearRect(0,0,W,H);
+        // sample data
+        const len = 64;
+        const points = Array.from({length:len}, (_,i)=>Math.sin((i/6) + Date.now()/800) * 28 + 120 + Math.random()*8);
+
+        // line
+        ctx.beginPath();
+        ctx.lineWidth = 2.6;
+        ctx.strokeStyle = 'rgba(212,175,55,0.95)';
+        for(let i=0;i<points.length;i++){
+          const x = (i/(points.length-1)) * W;
+          const y = H - (points[i] / 1.6);
+          if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }
+        ctx.stroke();
+
+        // glow points
+        ctx.globalCompositeOperation = 'lighter';
+        for(let i=0;i<points.length;i++){
+          const x = (i/(points.length-1)) * W;
+          const y = H - (points[i] / 1.6);
+          ctx.beginPath(); ctx.arc(x,y,2.4,0,Math.PI*2); ctx.fillStyle='rgba(212,175,55,0.14)'; ctx.fill();
+        }
+        ctx.globalCompositeOperation = 'source-over';
+      }
+
+      // animation loop
+      let raf;
+      function loop(){ draw(); raf = requestAnimationFrame(loop) }
+      loop();
+
+      // cleanup if needed
+      // window.addEventListener('unload', ()=> cancelAnimationFrame(raf));
+    })();
+
+    // ---------- Intersection observer for reveals
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          // reveal child cards with stagger
+          const children = entry.target.querySelectorAll('.card');
+          children.forEach((c,i)=> setTimeout(()=> c.classList.add('visible'), i*90));
+        }
+      });
+    }, {threshold:0.12});
+
+    qsa('.reveal').forEach(el => observer.observe(el));
+
+    // ---------- Pricing toggle
+    const monthlyBtn = qs('#monthly');
+    const yearlyBtn = qs('#yearly');
+    function togglePricing(t){
+      if(t === 'month'){
+        monthlyBtn.classList.add('active');
+        yearlyBtn.classList.remove('active');
+        qsa('.price').forEach(p => p.innerHTML = `$${p.dataset.month}<span style="font-size:13px;color:var(--muted)">/mo</span>`);
+      } else {
+        yearlyBtn.classList.add('active');
+        monthlyBtn.classList.remove('active');
+        qsa('.price').forEach(p => p.innerHTML = `$${p.dataset.year}<span style="font-size:13px;color:var(--muted)">/yr</span>`);
+      }
+    }
+    if(monthlyBtn && yearlyBtn){
+      monthlyBtn.addEventListener('click', ()=> togglePricing('month'));
+      yearlyBtn.addEventListener('click', ()=> togglePricing('year'));
+    }
+
+    // ---------- Testimonial slider
+    (function slider(){
+      const slides = qsa('.slide');
+      if(!slides.length) return;
+      let idx = 0;
+      setInterval(()=>{
+        slides[idx].classList.remove('active');
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('active');
+      }, 4200);
+    })();
+
+    // ---------- Small accessibility improvements
+    qsa('button').forEach(b=> b.setAttribute('type', b.getAttribute('type') || 'button'));
+
+  </script>
+</body>
+</html>

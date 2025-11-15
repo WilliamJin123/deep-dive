@@ -8,6 +8,7 @@ Gen Resources:
 
 Public MCP Servers:
 - https://github.com/modelcontextprotocol/servers 
+- https://github.com/punkpeye/awesome-mcp-servers 
 
 ## 10-31
 First thing to implement to get familiar with MCP, is an SQLite AI Agent based on this reddit post:

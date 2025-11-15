@@ -1,1 +1,26 @@
-<h1>Sigma</h1>
+{% comment %}
+  This is the homepage template.
+  Customize it to match the Outway design.
+{% endcomment %}
+
+{% section 'header' %}
+
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>The best performance socks for running, training, and more.</h1>
+  </div>
+</div>
+
+<div class="product-grid">
+  {% for collection in collections limit:3 %}
+    <div class="product-card">
+      <a href="{{ collection.url }}">
+        <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection.title }}">
+        <div class="sale-badge">UP TO <strong>60%</strong> OFF</div>
+        <div class="collection-title">{{ collection.title }}</div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+{% section 'footer' %}

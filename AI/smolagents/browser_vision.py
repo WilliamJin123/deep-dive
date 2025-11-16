@@ -77,19 +77,15 @@ def save_screenshot(memory_step: ActionStep, agent: CodeAgent) -> None:
 
 from smolagents import OpenAIServerModel
 
-
-MISTRAL_ENDPOINT_BASES = {
-    "chat": "https://api.mistral.ai/v1/chat/completions",
-    "fim": "https://api.mistral.ai/v1/fim/completions",
-    "base": "https://api.mistral.ai/v1",
-}
-
 # Initialize the model
-model_id = "pixtral-12b-latest"  # You can change this to your preferred VLM model
+model_id = "pixtral-large-latest"  # You can change this to your preferred VLM model
+model_id = "command-a-vision-07-2025"
 model = OpenAIServerModel(
     model_id,
-    api_base=MISTRAL_ENDPOINT_BASES["base"],
-    api_key=os.environ["MISTRAL_API_KEY"],
+    # api_base="https://api.mistral.ai/v1",
+    # api_key=os.environ["MISTRAL_API_KEY"],
+    api_key=os.environ["COHERE_API_KEY"],
+    api_base="https://api.cohere.ai/compatibility/v1"
 )
 
 agent = CodeAgent(

@@ -9,7 +9,7 @@ If you have a database configured for your agent, the sessions will be stored in
 | `session_id`    | str   | The unique identifier for the session.           |
 | `session_type`  | str   | The type of the session.                         |
 | `agent_id`      | str   | The agent ID of the session.                     |
-| `team_id`       | str   | The team ID of the session.                      |
+| `team_id`       | str   | The team ID of the Vsession.                      |
 | `workflow_id`   | str   | The workflow ID of the session.                  |
 | `user_id`       | str   | The user ID of the session.                      |
 | `session_data`  | dict  | The data of the session.                         |

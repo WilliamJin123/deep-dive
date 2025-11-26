@@ -1,0 +1,10 @@
+[
+  {
+    "type": "sqlite",
+    "path": "c:\\Users\\jinwi\\programming_files_NEW\\deep-dive\\AI\\agno\\learn\\teams\\intro\\tmp\\sessions.db"
+  },
+  {
+    "type": "sqlite",
+    "path": "c:\\Users\\jinwi\\programming_files_NEW\\deep-dive\\AI\\agno\\learn\\teams\\intro\\agno.db"
+  }
+]

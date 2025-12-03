@@ -1,0 +1,126 @@
+:root{
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark-gray: #e3e3e3;
+  --gray: #eee;
+}
+body{
+  background-color: blue;
+  font-family: 'Poppins';
+}
+html, body, .main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main{
+  width: 60vw;
+  height: 70vh;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);;
+}
+.tabs-area, .main-display{
+  background-color: var(--white);
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+.main-display{
+  height: 80vh;
+  border-radius:  0 0 10px 10px;
+  justify-content: center;
+}
+.tabs-area{
+  height: calc(10vh + 1rem);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid var(--gray);
+}
+.tabs{
+  width: 100%;
+  padding-right: 12.5%;
+  display: flex;
+  justify-content:space-evenly;
+  overflow:hidden;
+  align-items: center;
+}
+
+.tab{
+  background-color: var(--white);
+  display: flex;
+  height: 10vh;
+  border-radius: 5px 5px 0 0;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  padding-left: 1%;
+  
+}.tab .fade{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  mask-image: linear-gradient(to left, transparent 20px, #fff 40px);
+  -webkit-mask-image: linear-gradient(to left, transparent 20px, #fff 40px);
+  
+}
+
+.delete{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+
+  bottom: 3vh;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+.delete span{
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.add{
+  --size: 20px;
+  position: absolute;
+  top: 16.75vh;
+  right: 22vw;
+  font-size: var(--size);
+  background-color: var(--dark-gray);
+  color: var(--black);
+  display: flex;
+  outline: none;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+}
+.add:focus,
+.add:active,
+.add:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow: none; /* Removes any shadow effects */
+}
+
+.main-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12rem;
+}

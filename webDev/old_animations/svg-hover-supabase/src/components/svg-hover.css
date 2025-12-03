@@ -1,0 +1,30 @@
+.svg-div{
+    width: fit-content;
+    height: fit-content;
+    width: 24rem;
+    height: 24rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+.outer{
+    /* fill: rgba(15, 15, 15, 0.5); */
+   fill: black;
+}
+.inner{
+    
+    /* fill: rgba(31, 31, 31, 0.5); */
+    fill: gray;
+}
+.svg-to-hover{
+    width: 24rem;
+    height: 24rem;
+    transition: all 0.2s ease;
+
+}
+
+.path{
+    stroke-width: 1%;
+    
+}

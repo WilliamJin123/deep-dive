@@ -1,0 +1,10 @@
+:root{
+  --black: #000000;
+}
+
+html, body{
+  width: 100%;
+  background-color: var(--black);
+  font-family: 'Nunito Sans';
+}
+

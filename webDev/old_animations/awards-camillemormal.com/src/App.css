@@ -1,0 +1,81 @@
+:root{
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+html, body{
+  width: 100%;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  
+}
+*::-webkit-scrollbar{
+  width: 0;
+}
+
+
+.main{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+}.header .link{
+  margin: 3%;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--white);
+  transition: opacity 0.5s;
+}.header .link:hover{
+  opacity: 1;
+}
+
+
+.img-track-div{
+  width: fit-content;
+}
+
+.img-track{
+  display: flex;
+  position: sticky;
+  top: 25vh;
+  overflow: hidden;
+  
+}
+.img-list{
+  display: flex;
+  gap: 4vmin;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  z-index: 10;
+  will-change: transform, object-position;
+}
+.img-list img{
+  width: 40vh;
+  height: 50vh;
+  object-fit: cover;
+  outline: none;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  will-change: transform, object-position;
+}
+
+
+.about{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  user-select: none;
+
+}.about div{
+  margin: 1%;
+}

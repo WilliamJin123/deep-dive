@@ -1,0 +1,80 @@
+
+
+.hover-section{
+    background-color: #0a0a0a;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    overflow-x: hidden;
+}
+@media (min-width: 768px) {
+    .hover-section{
+        padding: 2rem;
+    }
+}
+.hover-div{
+    margin: 0 auto;
+    max-width: 64rem;
+}
+
+.hover-link{
+    text-decoration: none;
+    color: #777777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 2px solid #3d4451;
+    padding: 1rem 0;
+    transition-property: color, border-color, background-color, fill, stroke;
+    transition-duration: 500ms;
+    z-index: 10;
+}
+.hover-link:hover{
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+@media (min-width: 768px) {
+    .hover-link{
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+}
+
+.hover-link h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0 2rem 0;
+    z-index: 10;
+    position: relative;
+}
+.hover-link h1 span{
+    display: inline-block;
+}
+.hover-link .arrow{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.subheading{
+    position: relative;
+    z-index: 10;
+}
+.hover-link-img{
+    position: absolute;
+    z-index: 0;
+    height: 6rem;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+@media (min-width: 768px) {
+    .hover-link-img{
+      height: 100%;
+      
+    }
+}

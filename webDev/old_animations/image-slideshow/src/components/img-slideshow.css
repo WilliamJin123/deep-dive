@@ -1,0 +1,39 @@
+
+
+.slideshow{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000000;
+    
+}.slideshow img{
+    position: absolute;
+    
+}
+
+.slideshow-button{
+    color: #000000;
+    background-color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    position: absolute;
+    border-radius: 30px;
+    top: calc(50% - 20px);
+}
+.next{
+    right: 2vw;
+}
+.prev{
+    left: 2vw;
+    transform: scaleX(-1);
+}

@@ -1,0 +1,13 @@
+html, body{
+  background-color: #000000;
+  min-height: 100vh;
+
+}
+
+circle,
+rect,
+line {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  fill: transparent;
+}

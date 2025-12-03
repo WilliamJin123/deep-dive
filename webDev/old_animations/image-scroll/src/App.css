@@ -1,0 +1,46 @@
+body{
+  width: 1000vw;
+  height: auto;
+  overflow: hidden;
+}
+.main{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.main button{
+  position: fixed;
+  right: 50%;
+  z-index: 2;
+
+}
+
+.img-list{
+  display: flex;
+  margin:0.5vh;
+  align-items: center;
+  justify-content: center;
+}.img-list img{
+  object-fit: cover;
+  width: 99vw;
+  height: 99vh;
+}.img-list li{
+  
+  flex: 0 0 auto;
+}
+/* 
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin {
+  from{
+      --angle: 0deg;
+  }
+  to{
+      --angle: 360deg;
+  }
+} */

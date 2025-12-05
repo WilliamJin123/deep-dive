@@ -1,0 +1,83 @@
+# The add_tool method allows you to dynamically extend an Agent’s or a Team’s capabilities. This is particularly useful when you want to add tools based on user input or other runtime conditions.
+# The set_tool method allows you to override an Agent’s or a Team’s capabilities. Note that this will remove any existing tools previously assigned to your Agent or Team.
+
+
+import random
+
+from agno.agent import Agent
+from agno.models.cerebras import Cerebras
+
+from agno.tools import tool
+
+
+@tool(stop_after_tool_call=True)
+def get_weather(city: str) -> str:
+    """Get the weather for a city."""
+    # In a real implementation, this would call a weather API
+    weather_conditions = ["sunny", "cloudy", "rainy", "snowy", "windy"]
+    random_weather = random.choice(weather_conditions)
+
+    return f"The weather in {city} is {random_weather}."
+
+
+agent = Agent(
+    model=Cerebras(id="qwen-3-235b-a22b-instruct-2507"),
+    # model=OpenAIChat(id="gpt-5-mini"),
+    markdown=True,
+)
+
+agent.print_response("What can you do?", stream=True)
+
+agent.add_tool(get_weather)
+
+agent.print_response("What is the weather in San Francisco?", stream=True)
+
+
+import random
+
+from agno.agent import Agent
+from agno.models.cerebras import Cerebras
+
+from agno.team.team import Team
+from agno.tools import tool
+from agno.tools.calculator import CalculatorTools
+
+
+agent1 = Agent(
+    name="Stock Searcher",
+    model=Cerebras(id="qwen-3-235b-a22b-instruct-2507"),
+    # model=OpenAIChat("gpt-5-mini"),
+)
+
+agent2 = Agent(
+    name="Company Info Searcher",
+    model=Cerebras(id="qwen-3-235b-a22b-instruct-2507"),
+    # model=OpenAIChat("gpt-5-mini"),
+)
+
+team = Team(
+    name="Stock Research Team",
+    model=Cerebras(id="qwen-3-235b-a22b-instruct-2507"),
+    # model=OpenAIChat("gpt-5-mini"),
+    members=[agent1, agent2],
+    tools=[CalculatorTools()],
+    markdown=True,
+    show_members_responses=True,
+)
+
+
+@tool
+def get_stock_price(stock_symbol: str) -> str:
+    """Get the current stock price of a stock."""
+    return f"The current stock price of {stock_symbol} is {random.randint(100, 1000)}."
+
+@tool
+def get_stock_availability(stock_symbol: str) -> str:
+    """Get the current availability of a stock."""
+    return f"The current stock available of {stock_symbol} is {random.randint(100, 1000)}."
+
+
+team.set_tools([get_stock_price, get_stock_availability])
+
+team.print_response("What is the current stock price of NVDA?", stream=True)
+team.print_response("How much stock NVDA stock is available?", stream=True)

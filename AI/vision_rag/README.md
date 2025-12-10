@@ -1,0 +1,1 @@
+[Reference](https://github.com/debnsuma/fcc-ai-engineering-aws/tree/main/08-strands-demo/demo-agentic-voice-based-rag-with-vision-based-retrieval/?trk=7dd6ab1d-561b-49c6-bae9-b5978e1e2073&sc_channel=el)

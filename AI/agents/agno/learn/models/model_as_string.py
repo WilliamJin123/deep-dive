@@ -1,0 +1,11 @@
+# Provider	String Format	Example
+# OpenAI	openai:model_id	"openai:gpt-4o"
+# Anthropic	anthropic:model_id	"anthropic:claude-sonnet-4-20250514"
+# Google	google:model_id	"google:gemini-2.0-flash-exp"
+# Groq	groq:model_id	"groq:llama-3.3-70b-versatile"
+# Ollama	ollama:model_id	"ollama:llama3.2"
+# Azure AI Foundry	azure-ai-foundry:model_id	"azure-ai-foundry:gpt-4o"
+# Mistral	mistral:model_id	"mistral:mistral-large-latest"
+# LiteLLM	litellm:model_id	"litellm:gpt-4o"
+# OpenRouter	openrouter:model_id	"openrouter:anthropic/claude-3.5-sonnet"
+# Together	together:model_id	"together:meta-llama/Llama-3-70b-chat-hf"

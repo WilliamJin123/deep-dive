@@ -63,6 +63,8 @@ asyncio.run(
         metadata={"user_tag": "Engineering Candidates"},
         skip_if_exists=False,
         # True by default
+        upsert=False
+        #True by default
     )
 )
 
@@ -72,3 +74,47 @@ knowledge.add_content(
     path="cookbook/08_knowledge/testing_resources/cv_1.pdf",
     metadata={"user_tag": "Engineering Candidates"},
 )
+
+
+# For batch loading
+knowledge.add_contents(
+    paths=["docs/", "policies/"],
+    skip_if_exists=True,
+    include=["*.pdf", "*.md"],
+    exclude=["*temp*", "*draft*"]
+)
+
+# knowledge.add_contents_async
+
+
+
+async def load_knowledge_efficiently():
+    # Load multiple content sources in parallel
+    tasks = [
+        knowledge.add_content_async(path="docs/hr/"),
+        knowledge.add_content_async(path="docs/engineering/"),
+        knowledge.add_content_async(url="https://company.com/api-docs"),
+    ]
+    await asyncio.gather(*tasks)
+
+asyncio.run(load_knowledge_efficiently())
+
+### NOTE: MONITOR PERFORMANCE
+
+# Check content processing status
+content_list, total_count = knowledge.get_content()
+
+failed = [c for c in content_list if c.status == "failed"]
+if failed:
+    print(f"Failed items: {len(failed)}")
+    for content in failed:
+        status, message = knowledge.get_content_status(content.id)
+        print(f"  {content.name}: {message}")
+
+# Time your searches
+import time
+
+start = time.time()
+results = knowledge.search("test query", max_results=5)
+elapsed = time.time() - start
+print(f"Search took {elapsed:.2f} seconds")

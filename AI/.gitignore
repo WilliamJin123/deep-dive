@@ -2,6 +2,7 @@
 **/*.pth
 **/node_modules/
 
+**/langchain-course
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

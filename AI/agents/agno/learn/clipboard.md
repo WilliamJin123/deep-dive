@@ -14,3 +14,8 @@ from agno.models.google import Gemini
 from agno.workflow import Step, StepInput, StepOutput, Steps, Workflow
 
 
+from agno.knowledge.embedder.cohere import CohereEmbedder
+        embedder=CohereEmbedder(dimensions=1536, id="embed-v4.0", input_type="search_document"),
+
+
+

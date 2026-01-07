@@ -11,13 +11,13 @@ skills_dir = Path(__file__).parent / "skills"
 
 # Initialize the Agent
 agent = Agent(
-    model=Cerebras(id="qwen-3-235b-a22b-instruct-2507"),
+    model=Cerebras(id="gpt-oss-120b"),
     name="Calculator Agent",
     instructions=[
         "You are a helpful assistant with a calculator skill.",
         "When asked to calculate a math expression, use the `calculator` skill.",
-        "To use the skill, use the available function `get_skill_script` to run 'calculator/scripts/calculate.py' with the expression as an argument.",
-        "Example: get_skill_script(skill_name='calculator', script_path='scripts/calculate.py', args=['2 + 2'])",
+        "To use the skill, use the available function `get_skill_script` to run 'calculate.bat' with the expression as an argument.",
+        "Example: get_skill_script(skill_name='calculator', script_path='calculate.bat', args=['2 + 2'])",
         "Always output the result clearly."
     ],
     skills=Skills(loaders=[LocalSkills(str(skills_dir))]),
